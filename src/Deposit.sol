@@ -1,3 +1,5 @@
+pragma solidity 0.8.25;
+
 contract Deposit {
     address public seller = msg.sender;
     mapping(address => uint256) public balance;
