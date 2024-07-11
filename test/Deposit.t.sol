@@ -22,5 +22,14 @@ contract InvariantDeposit is Test {
         assertGt(balanceBefore, balanceAfter);
     }
 
+     function invariant_alwaysWithdrawable2() external payable {
+        deposit.deposit{value: 1 ether}();
+        uint256 balanceBefore = deposit.balance(address(this));
+        assertEq(balanceBefore, 1 ether);
+        deposit.withdraw();
+        uint256 balanceAfter = deposit.balance(address(this));
+        assertGt(balanceBefore, balanceAfter);
+    }
+
     receive() external payable {}
 }
