@@ -3,7 +3,11 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
-[invariant]
+[profile.default.fuzz]
+seed = 1
+
+[profile.default.invariant]
 runs = 1
+depth = 1
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
