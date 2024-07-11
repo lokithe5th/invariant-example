@@ -8,6 +8,7 @@ contract InvariantDeposit is Test {
     Deposit deposit;
 
     function setUp() external {
+        vm.createSelectFork(API_KEY);
         deposit = new Deposit();
         vm.deal(address(deposit), 100 ether);
     }
